@@ -30,7 +30,19 @@
 */
 
 //CODE HERE
+class Ticket {
+    constructor(items, orderTime, customerId) {
+        this.items = items
+        this.orderTime = orderTime
+        this.customerId = customerId
+        this.status = 'queued'
+    }
 
+    updateStatus(newStatus) {
+        this.status = newStatus
+        console.log(`The order for customer ${this.customerId} is now ${this.status}.`)
+    }
+}
 
 
 /*
@@ -45,7 +57,10 @@
 */
 
 //CODE HERE
-
+let firstTicket = new Ticket(['pizza', 'bread', 'soda'], '10:30 AM', 384)
+console.log('---------- Log by initial instance ---------')
+console.log(firstTicket)
+console.log('\n')
 
 /*
     Call the `updateStatus` method on
@@ -54,3 +69,6 @@
 */
 
 //CODE HERE
+console.log('---------- Log by call method updateStatus ---------')
+firstTicket.updateStatus('processing')
+console.log(firstTicket)
