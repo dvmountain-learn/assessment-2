@@ -39,7 +39,10 @@ let pizza = {
     rating: 2003,
     tags: ['pepperoni', 'cheese', 'mushroom', 'gluten-free', 'kids', 'girls', 'boys']
 }
-
+console.log('\n')
+console.log('---------- Log Object Pizza  ---------')
+console.log(pizza)
+console.log('\n')
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -52,6 +55,7 @@ let pizza = {
 //CODE HERE
 console.log('---------- Log by Popularity ---------')
 console.log(pizza.popularity)
+console.log('\n')
 
 /*
     Second, log the second tag in your pizza's
@@ -63,6 +67,7 @@ console.log(pizza.popularity)
 //CODE HERE
 console.log('---------- Log by Tags ---------')
 console.log(pizza.tags[1])
+console.log('\n')
 
 /*
     Third, destructure the price off of the
@@ -75,6 +80,7 @@ console.log(pizza.tags[1])
 let {price} = pizza
 console.log('---------- Destructure by Price ---------')
 console.log(price)
+console.log('\n')
 /*
     Fourth, and last, destructure the category
     property.
@@ -86,6 +92,7 @@ console.log(price)
 let {category} = pizza
 console.log('---------- Destructure Category ---------')
 console.log(category)
+console.log('\n')
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -162,6 +169,7 @@ let filterFoods = foodArr.filter((foodObj) => {
 })
 console.log('---------- Filter Foods By Tags ---------')
 console.log(filterFoods)
+console.log('\n')
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -253,9 +261,11 @@ function filterByProperty(property, number, type) {
 let filterByRating = filterByProperty('rating', 500, 'above')
 console.log('---------- Filter By Rating ---------')
 console.log(filterByRating)
+console.log('\n')
 let filterByPopularity = filterByProperty('popularity', 200, 'below')
 console.log('---------- Filter By Popularity ---------')
 console.log(filterByPopularity)
+console.log('\n')
 let filterByPrice = filterByProperty('price', 10, 'below')
 console.log('---------- Filter By Price ---------')
 console.log(filterByPrice)

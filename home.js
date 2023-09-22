@@ -25,7 +25,9 @@
 let greetUser = (username) => {
     return `Welcome back, ${username}`
 }
+console.log('---------- Log function greetUser ---------')
 console.log(greetUser('Andrew'))
+console.log('\n')
 
 
 //////////////////PROBLEM 2////////////////////
@@ -52,13 +54,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 function canWeDeliver(zipCode) {
-    if (zipCode.includes('85205')) return `You're in our delivery zone!`
-    else if (zipCode.includes('85206')) return `Sorry, we can't deliver to that address`
-    else return `They are eligible for delivery`
+    let zoon = String(zipCode)
+    if (zoon.startsWith('85')) return `You're in our delivery zone!`
+    else return `Sorry, we can't deliver to that address`
 }
-
-console.log(canWeDeliver(deliveryAreaZipCodes))
-
+console.log('\n')
+console.log('---------- Log Convert to String  ---------')
+console.log(canWeDeliver(84606))
+console.log(canWeDeliver(85205))
+console.log('\n')
 /* 
     Problem 2 Continued
 
@@ -78,13 +82,13 @@ console.log(canWeDeliver(deliveryAreaZipCodes))
 
 // CODE HERE
 function canWeDeliverTwo(zipCode) {
-    zipCode.forEach(code => {
-        if (code === '85205') return `You're in our delivery zone!`
-        else if (code === '85206') return `Sorry, we can't deliver to that address`
-        else return `They are eligible for delivery`
-    });
+    if (zipCode.includes(85)) return `You're in our delivery zone!`
+    else return `Sorry, we can't deliver to that address`
 }
-console.log(canWeDeliverTwo(deliveryAreaZipCodes))
+console.log('---------- Log Array method includes  ---------')
+console.log(canWeDeliver(84606))
+console.log(canWeDeliver(85205))
+console.log('\n')
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -120,7 +124,8 @@ const deals = [
 */
 
 //CODE HERE
-
+let dealsOfTitle = deals[0].title.replace('15%', '10%')
+console.log(dealsOfTitle)
 
 
 /*
@@ -137,3 +142,5 @@ const deals = [
 */
 
 //CODE HERE
+let dealsOfDesc = deals[1].desc.replace('March', 'April')
+console.log(dealsOfDesc)
