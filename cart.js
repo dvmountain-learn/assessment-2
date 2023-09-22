@@ -108,3 +108,4 @@ let customer = {
     email: 'joshchea@gamil.com',
     member: 6
 }
+console.log(customer)
