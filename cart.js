@@ -34,8 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => {
+    return acc + cur.price
+}, 0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,8 +56,11 @@ const cart = [
 */
 
 //CODE HERE
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    let totalAfterTax = cartTotal + tax
+    return totalAfterTax - couponValue
+}
+console.log(calcFinalPrice(26.97, 2.5, 0.6))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +84,15 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    - name: Provide to property name so easy to identify person for responsible reservation a table (how many people?)
+    - tel: Some restaurants send OTP while register information into system (restaurant) related to confirmation on reservation 
+    - email: They can send promotion by email, if they special offer (%)
+    - member: They need to know (How many people so they easy to find a table for us?)
+
+    - name: (string) because I need to store first name and last name
+    - tel: (string) because sometimes we need to store different format (Ex: 288-388-9999, 9009998888)
+    - email: (string) because I need to store special character, characters, and symbols
+    - member: (int) because I need to store number of person will be walk into the restaurant
 
 */
 
@@ -88,3 +102,9 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    name: 'Josh Chea',
+    tel: '239-399-0234',
+    email: 'joshchea@gamil.com',
+    member: 6
+}
