@@ -22,9 +22,10 @@
 */
 
 //CODE HERE
-
-
-
+let greetUser = (username) => {
+    return `Welcome back, ${username}`
+}
+console.log(greetUser('Andrew'))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -50,8 +51,13 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
+function canWeDeliver(zipCode) {
+    if (zipCode.includes('85205')) return `You're in our delivery zone!`
+    else if (zipCode.includes('85206')) return `Sorry, we can't deliver to that address`
+    else return `They are eligible for delivery`
+}
 
-
+console.log(canWeDeliver(deliveryAreaZipCodes))
 
 /* 
     Problem 2 Continued
@@ -71,7 +77,14 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
+function canWeDeliverTwo(zipCode) {
+    zipCode.forEach(code => {
+        if (code === '85205') return `You're in our delivery zone!`
+        else if (code === '85206') return `Sorry, we can't deliver to that address`
+        else return `They are eligible for delivery`
+    });
+}
+console.log(canWeDeliverTwo(deliveryAreaZipCodes))
 
 //////////////////PROBLEM 3////////////////////
 /* 

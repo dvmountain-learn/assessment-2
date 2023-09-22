@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'Chicago Deep-Dish Pizza',
+    price: 15,
+    category: 'Appetizer',
+    popularity: 343,
+    rating: 2003,
+    tags: ['pepperoni', 'cheese', 'mushroom', 'gluten-free', 'kids', 'girls', 'boys']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,8 @@
 */
 
 //CODE HERE
-
+console.log('---------- Log by Popularity ---------')
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,8 @@
 */
 
 //CODE HERE
-
+console.log('---------- Log by Tags ---------')
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,8 +72,9 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+console.log('---------- Destructure by Price ---------')
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +83,9 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log('---------- Destructure Category ---------')
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +100,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: 'Chicago Deep-Dish Pizza',
+        price: 15,
+        category: 'Appetizer',
+        popularity: 43,
+        rating: 103,
+        tags: ['capsicum', 'girls', 'boys']
+    },
+    {
+        name: 'Margherita Pizza',
+        price: 9.99,
+        category: 'Entree',
+        popularity: 153,
+        rating: 730,
+        tags: ['gluten-free', 'kids']
+    },
+    {
+        name: 'Sicilian Pizza',
+        price: 12.99,
+        category: 'Appetizer',
+        popularity: 300,
+        rating: 272,
+        tags: ['garlic', 'mushroom']
+    },
+    {
+        name: 'Hawaiian Pizza',
+        price: 11.99,
+        category: 'Entree',
+        popularity: 377,
+        rating: 900,
+        tags: ['onion', 'potato']
+    },
+    {
+        name: 'New York Style Pizza',
+        price: 7.99,
+        category: 'Entree',
+        popularity: 749,
+        rating: 287,
+        tags: ['pepperoni', 'cheese']
+    },
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,10 +157,11 @@
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
+let filterFoods = foodArr.filter((foodObj) => {
+    return foodObj.tags.includes('mushroom')
+})
+console.log('---------- Filter Foods By Tags ---------')
+console.log(filterFoods)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +203,44 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type) {
+    let filteredArr = []
+    if (property === 'rating') {
+        if (type === 'above') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.rating > number
+            })
+        } else if (type === 'below') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.rating < number
+            })
+        }
+    } else if (property === 'popularity') {
+        if (type === 'above') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.popularity > number
+            })
+        } else if (type === 'below') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.popularity < number
+            })
+        }
+    } else if (property === 'price') {
+        if (type === 'above') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.price > number
+            })
+        } else if (type === 'below') {
+            filteredArr = foodArr.filter((obj) => {
+                return obj.price < number
+            })
+        }
+    } else {
+        console.log('You are provide wrong property, Could you check property again, please?')
+        return null
+    }
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +250,12 @@
 */
 
 //CODE HERE
+let filterByRating = filterByProperty('rating', 500, 'above')
+console.log('---------- Filter By Rating ---------')
+console.log(filterByRating)
+let filterByPopularity = filterByProperty('popularity', 200, 'below')
+console.log('---------- Filter By Popularity ---------')
+console.log(filterByPopularity)
+let filterByPrice = filterByProperty('price', 10, 'below')
+console.log('---------- Filter By Price ---------')
+console.log(filterByPrice)
