@@ -1,2 +1,4 @@
 1) Pinterest, Google, Facebook 
-2) 
+2)  - Pinterest: Python, Django, HTML, CSS, Javascript, Database, etc.
+    - Google: C, C++, Python, Ruby, HTML, CSS, Javascript, etc.
+    - Facebook: React, HTML, CSS, Python, Javascript, etc.
