@@ -54,9 +54,11 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 function canWeDeliver(zipCode) {
-    let zoon = String(zipCode)
-    if (zoon.startsWith('85')) return `You're in our delivery zone!`
-    else return `Sorry, we can't deliver to that address`
+    for (let code of zipCode) {
+        if (code.startsWith(85)) return `You're in our delivery zone!`
+        else return `Sorry, we can't deliver to that address`  
+    }
+    
 }
 console.log('\n')
 console.log('---------- Log Convert to String  ---------')
@@ -82,8 +84,11 @@ console.log('\n')
 
 // CODE HERE
 function canWeDeliverTwo(zipCode) {
-    if (zipCode.includes(85)) return `You're in our delivery zone!`
+    for (let code of zipCode) {
+        if (code.includes(85)) return `You're in our delivery zone!`
     else return `Sorry, we can't deliver to that address`
+    }
+    
 }
 console.log('---------- Log Array method includes  ---------')
 console.log(canWeDeliver(84606))
